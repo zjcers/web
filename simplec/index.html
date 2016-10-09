@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Zane J Cersovsky</title>
+		<link rel="stylesheet" href="/css/main.css">
+	</head>
+	<body>
+		<div id="bar-left">
+			<h1 id="name">
+				Zane J<br/>
+				Cersovsky
+			</h1>
+			<ul>
+				<li>
+					<a href="/">Main Page</a>
+				</li>
+				<li>
+					<a href="https://github.com/zjcers/">Github</a>
+				</li>
+				<li>
+					<a href="/files/resume.pdf">Resume</a>
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<h1>LibSimpleC</h1>
+			<i style="text-align: center;">A simple C standard library that I'm writing to learn about C</i>
+			<h2>Origins</h2>
+			<p>
+				When I started this project, I was midway through EECS 268 (Programming II). I really enjoyed the freedom in the class, as far as
+				structure and implementation were concerned. I began to use pattern rules in my Makefiles and convenience libraries built from 
+				subdirectories to structure my projects for the class. Being an avid tinkerer, I had to know how more of the code I was writing 
+				worked. One thing led to another and I wrote a simple malloc() and free(). My original intention was to surprise my TA by turning
+				in a lab assignment that had no external dependencies, but this was a pipe dream. Doubly so since the class was in C++ and the 
+				C++ start up code does some interesting things when it initializes constructors and destructors. Stuff that my Programming II 
+				mind could only begin to comprehend.
+			</p>
+			<h2>Philosophy</h2>
+			<p>
+				I enjoy knowing how things work. Sometimes, to learn how something works, you just have to sit down and build one. That is 
+				difficult with this project since at the beginning of the project, I barely knew C++, let alone the added intricacies of working
+				with freestanding C. On the other, that's just another opportunity to learn some fun stuff.
+			</p>
+			<h2>Structure</h2>
+			<p>
+				Presently, the structure is super simple. All of the public-facing (plus a few private) functions are in the header files you 
+				would normally expect them in (e.g. write() is in stdio.h). These reside in an include directory while their respective source 
+				files reside in the main directory. Currently, the only methods that are spun-out from the standard ones are the functions that
+				compose the memory management routines. These are in memory.(c|h), but I am considering moving and inlining them to reduce 
+				namespace pollution if nothing else.
+			</p>
+			<h2>Dependencies<h2>
+				<h3>Build time</h3>
+					<ul>
+						<li>A C compiler that supports C99. Currently, I have only tested GCC</li>
+						<li>Make. Any old make will do.</li>
+						<li>GNU autoconf</li>
+						<li>GNU automake</li>
+						<li>GNU Libtool</li>
+						<li>Dejagnu (for tests)</li>
+					</ul>
+				<h3>Run time</h3>
+					<ul>
+						<li>x86-64 Linux</li>
+					</ul>
+		</div>
+		<div id="bar-right">
+		</div>
+	</body>
+</html>

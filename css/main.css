@@ -1,0 +1,51 @@
+
+#bar-left {
+	font-family: Arial, Helvetica, sans-serif;
+	border-right-style: solid;
+	border-right-width: 2px;
+	height: 98vh;
+	margin-right: 20px;
+	position: fixed;
+	top: 0;
+	left: 0;
+}
+#bar-right {
+        font-family: Arial, Helvetica, sans-serif;
+        border-left-style: solid;
+        border-left-width: 2px;
+        height: 98vh;
+        margin-left: 20px;
+	width: 50px;
+	position: fixed;
+	top: 0;
+	right: 0;
+}
+#name {
+	width: 200px;
+	text-align: right;
+	margin-right: 10px;
+}
+#content {
+	padding-left: 220px;
+	padding-right: 50px;
+	margin-top: 20px;
+	overflow: auto;
+}
+body {
+	background-color: #f5f7c5;
+	color: #0f2344;
+}
+div.project-card {
+	background-color: #fbfce9;
+	text-align: center;
+	width: 200px;
+	height: 320px;
+	border-style: solid;
+	border-color: #f7eca8;
+	border-width: 4px;
+	margin: 10px;
+	float: left;
+}
+a {
+	color: #0f2344;
+}
