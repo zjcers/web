@@ -37,7 +37,6 @@ body {
 }
 div.project-card {
 	background-color: #fbfce9;
-	text-align: center;
 	width: 200px;
 	height: 320px;
 	border-style: solid;
@@ -45,6 +44,9 @@ div.project-card {
 	border-width: 4px;
 	margin: 10px;
 	float: left;
+}
+.centered-header {
+	text-align: center;
 }
 a {
 	color: #0f2344;
