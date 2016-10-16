@@ -1,8 +1,11 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>Zane J Cersovsky</title>
-		<link rel="stylesheet" href="/css/main.css">
+		<title>Styleguide</title>
+		<noscript>
+			<link rel="stylesheet" href="/css/main.css">
+		</noscript>
+		<script src="/js/main.js"></script>
 	</head>
 	<body>
 		<div id="bar-left">
@@ -23,7 +26,155 @@
 			</ul>
 		</div>
 		<div id="content">
-			Sorry, I haven't actually completed this page yet.
+			<h1>Personal Styleguide</h1>
+			<h3>C</h3>
+				<h4>Example</h4>
+				<i>(Taken from LibSimpleC)</i>
+				<pre>
+					<code>
+int atoi(const char* src) {
+	size_t i = 0;
+	int ret = 0;
+	bool inNumber = false;
+	bool isNegative = false;
+	for(; src[i] != 0; i++) {
+		/*before the number is found in the string*/
+		if (inNumber == false) {
+			/*check if there is a leading - sign*/
+			if (src[i] == '-') {
+				inNumber = true;
+				isNegative = true;
+			}
+			/*if not, check if the leading digit has been found*/
+			else if (src[i] >= '0' && src[i] <= '9') {
+				inNumber = true;
+				ret = addToNumber(ret, src[i]);
+			}
+		}
+		/*inside the number, check if the current char is still a digit*/
+		else if (src[i] >= '0' && src[i] <= '9'){
+			ret = addToNumber(ret, src[i]);
+		}
+		/*if the current char is not a digit, the number is over*/
+		else {
+			break;
+		}
+	}
+	if (isNegative) {
+		return ret*-1;
+	}
+	return ret;
+}
+				</code>
+			</pre>
+			<h4>Comments</h4>
+			<p>
+				I always use the "/**/" comment format, even for single-line comments. I believe this encourages me to put comments
+				on their own lines. In turn, I think this leads to more meaningful content as opposed to quick comments at the end
+				of a line. It should be noted that I'm a bit lazy and don't use the traditional leading asterisks like I should. This
+				is for consistency among the other languages that I write in that don't use that convention.
+			</p>
+			<h4>Indentation and bracket placement</h4>
+			<p>
+				I always use hard tabs when possible in any language. I know there exists a lot of controversey on this regard, and
+				I don't have a zealous opinion on this. On the other hand, hard tabs are easier to navigate when the text editor
+				you're using doesn't know how to detect soft tabs and skip them automatically. Also, I have yet to meet a language
+				that honestly refuses them, though I know M4 refuses to parse soft tabs.
+			</p>
+			<p>
+				I put my opening brackets on the same line as the expression they belong to. Some people like it the other way. That's
+				fine, but this way is easier for me to read. It allows me to look straight up from the respective closing bracket and
+				see the exact statement it belongs to rather than having to skip up an extra line.
+			</p>
+			<h4>Naming Stuff</h4>
+			<p>
+				As per C tradition, I name public-facing things underscore-deliminated style. Private things such as locals and helper
+				functions are camelCased. This isn't very C-like, but I like it. It makes it easier for me to tell when something is
+				intended to be global or not.
+			</p>
+			<h4>Functions and other syntax</h4>
+			<p>
+				I always omit the space between the function name and the argument list in any language that supports it. I have no
+				reasoning to back this up other than it saves my thumb a trip to the space bar. This is pretty much the only place I
+				omit whitespace. Argument lists either in declarations or calls are always space-separated. I think it looks a lot
+				cleaner.
+			</p>
+			<p>
+				Return is not a function. I don't treat as so (though I did when I first learned C++). sizeof is also not a function,
+				though I'm <a href="https://lkml.org/lkml/2012/7/11/103">with Linus on this one</a>. It makes more sense to treat it
+				as one.
+			</p>
+			<hr/>
+			<h3>C++</h3>
+			<p>
+				I use the same styling rules as C for the most part. I'll update this section once I get back into a C++ project again.
+			</p>
+			<hr/>
+			<h3>Python</h3>
+			<p>
+				<a href="https://www.python.org/dev/peps/pep-0008/">PEP8</a> says that I should use 4-space tabs. It says a lot of
+				other things, too. A lot of those I don't care to read or just ignore. Like the recommendation to use underscore-
+				deliminated variable names. I like camelCase too much for that. It looks better.
+			</p>
+			<hr/>
+			<h3>JavaScript</h3>
+			<h4>Example</h4>
+			<i>(From my fork of LinterGCC)</i>
+			<pre>
+				<code>
+buildCommand: function(activeEditor, file) {
+  if (atom.config.get("linter-gcc.gccDebug")) {
+    console.log("linter-gcc config: " + JSON.stringify(settings));
+  }
+  let command = this.getCommandFromCMake(file, activeEditor, settings);
+  if (!command) {
+    /*buildCommandFromSettings returns a complete object*/
+    return this.buildCommandFromSettings(file, activeEditor, settings);
+  }
+  /*Split the binary name from before the first space and
+    the args from behind it*/
+  let binary = command.substring(0, command.indexOf(" "));
+  let args = command.substring(command.indexOf(" ")+1, command.length);
+  args = this.fixFlags(args);
+  return {binary: this.findBinary(binary), args: args};
+},
+				</code>
+			</pre>
+			<p>
+				I try to write JavaScript like I write C/C++ as much as possible. The comment and indentation styles I use are mostly
+				the same. I like the new ES6 variable statements (let and const). They make scoping a lot easier to track. On the
+				other hand, the new short function statements (&lt;varname&gt; =&gt;...) aren't very readible and I avoid using them.
+			</p>
+			<hr/>
+			<h3>HTML</h3>
+			<h4>Example</h4>
+			<i>(From the header of this page)</i>
+			<pre>
+				<code>
+&lt;div id="bar-left"&gt;
+	&lt;h1 id="name"&gt;
+		Zane J&lt;br/&gt;
+		Cersovsky
+	&lt;/h1&gt;
+	&lt;ul&gt;
+		&lt;li&gt;
+			&lt;a href="/"&gt;Main Page&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a href="https://github.com/zjcers/"&gt;Github&lt;/a&gt;
+		&lt;/li&gt;
+		&lt;li&gt;
+			&lt;a href="/files/resume.pdf"&gt;Resume&lt;/a&gt;
+		&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;
+				</code>
+			</pre>
+			<p>
+				My only big style rules for HTML are to always use tabs to show how many tags a given position is inside and to be as
+				semantic as possible. HTML has a lot of special tags that mean special things. Use them. Like all other languages,
+				I like to keep it legible and cut my line length down to where my editor usually ends (around character 125).
+			</p>
 		</div>
 		<div id="bar-right">
 		</div>
