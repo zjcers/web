@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Linter-GCC</title>
+		<noscript>
+			<link rel="stylesheet" href="/css/main.css">
+		</noscript>
+		<script src="/js/main.js"></script>
+	</head>
+	<body>
+		<div id="bar-left">
+			<h1 id="name">
+				Zane J<br/>
+				Cersovsky
+			</h1>
+			<ul>
+				<li>
+					<a href="/">Main Page</a>
+				</li>
+				<li>
+					<a href="https://github.com/zjcers/">Github</a>
+				</li>
+				<li>
+					<a href="/files/resume.pdf">Resume</a>
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<h1>Linter-GCC*</h1>
+			<i>*(Fork of)</i>
+			<h2>Origins</h2>
+			<p>
+				If there's an Atom package that I immediately search for when setting up a new installation, it's linter-gcc. I love it.
+				On the other hand, it has some warts. I found a bug in it while working on my C-library. Making a freestandingC project
+				wasn't what pushed linter-gcc to the limits. Rather, it was the fact that I like to have more than one project open at
+				a time.
+			</p>
+			<p>
+				The <a href="https://github.com/hebaishi/linter-gcc/">original branch</a> of linter-gcc is hardcoded to only search
+				its configuration file in the directory tree of the first open project in Atom. I had originally set out to quickly
+				correct this and send a pull request to the author. That sounded easy at first. Once I started reading through the
+				codebase, though, everything changed. I found where the relevant incorrect assumptions were made, but changing them
+				caused an error it really shouldn't have in another method.
+			</p>
+			<p>
+				Finding this, I decided to go down the rabbit hole. I tried to grok my way through the code, but, and I hate to come
+				off as overly-critical, it was way too hard to read. Some parts of it I simple could not understand, and some parts
+				were...inefficent. So I decided to refactor a bit of it. Well, one thing led to another, and I spent a week's worth
+				of free time rewriting nearly the whole project. Time well spent, I think.
+			</p>
+			<h2>Status</h2>
+				<h3>Current Status (versus the original)</h3>
+				<ul>
+					<li>I fixed the bug I set out to (multiple projects open at once)</li>
+					<li>I regressed in functionality by removing the lint-on-the-fly support</li>
+					<li>Everything is almost-completely rewritten, except for config.js</li>
+					<li>About 4 fewer dependencies</li>
+
+				</ul>
+				<h3>Future plans</h3>
+				<ul>
+					<li>Finish the rewrite by refactoring config.js</li>
+					<li>Add support for importing CFLAGS/CPPFLAGS from GNU Autotools</li>
+					<li>Possibly re-add lint-on-the-fly support if there is interest/I am bored</li>
+					<li>Possibly integrate some settings into the GUI</li>
+				</ul>
+		</div>
+		<div id="bar-right">
+		</div>
+	</body>
+</html>
