@@ -10,11 +10,11 @@
 	left: 0;
 }
 #bar-right {
-        font-family: Arial, Helvetica, sans-serif;
-        border-left-style: solid;
-        border-left-width: 2px;
-        height: 98vh;
-        margin-left: 20px;
+	font-family: Arial, Helvetica, sans-serif;
+	border-left-style: solid;
+	border-left-width: 2px;
+	height: 98vh;
+	margin-left: 20px;
 	width: 50px;
 	position: fixed;
 	top: 0;
@@ -34,6 +34,7 @@
 body {
 	background-color: #f5f7c5;
 	color: #0f2344;
+	margin: 10px;
 }
 div.project-card {
 	background-color: #fbfce9;

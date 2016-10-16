@@ -21,7 +21,4 @@ function isMobile() {
   if (isMobile()) {
     insertCSS("/css/mobile.css");
   }
-  else {
-    insertCSS("/css/main.css");
-  }
 })();
