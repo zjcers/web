@@ -57,3 +57,6 @@ code {
 	border-width: thin;
 	display: block;
 }
+p.card-desc {
+	margin: 8px;
+}
