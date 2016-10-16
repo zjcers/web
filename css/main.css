@@ -38,15 +38,19 @@ body {
 div.project-card {
 	background-color: #fbfce9;
 	width: 200px;
-	height: 320px;
+	height: 200px;
 	border-style: solid;
 	border-color: #f7eca8;
 	border-width: 4px;
+	border-radius: 15px;
 	margin: 10px;
 	float: left;
 }
-.centered-header {
+div.project-card h3 {
 	text-align: center;
+}
+div.project-card p {
+	margin: 8px;
 }
 a {
 	color: #0f2344;
@@ -57,6 +61,15 @@ code {
 	border-width: thin;
 	display: block;
 }
-p.card-desc {
-	margin: 8px;
+ul {
+	display:inline;
+}
+li a {
+	margin-left: 10px;
+	text-decoration: none;
+	display: block;
+	border-radius: 5px;
+}
+li a:hover {
+	background-color: #f7eca8;
 }
