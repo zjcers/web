@@ -20,90 +20,14 @@
 				<li>
 					<a href="https://github.com/zjcers/">Github</a>
 				</li>
-				<li>
-					<a href="/files/resume.pdf">Resume</a>
-				</li>
 			</ul>
 		</div>
 		<div id="content">
 			<h1>Personal Styleguide</h1>
 			<h3>C</h3>
-				<h4>Example</h4>
-				<i>(Taken from LibSimpleC)</i>
-				<pre>
-					<code>
-int atoi(const char* src) {
-	size_t i = 0;
-	int ret = 0;
-	bool inNumber = false;
-	bool isNegative = false;
-	for(; src[i] != 0; i++) {
-		/*before the number is found in the string*/
-		if (inNumber == false) {
-			/*check if there is a leading - sign*/
-			if (src[i] == '-') {
-				inNumber = true;
-				isNegative = true;
-			}
-			/*if not, check if the leading digit has been found*/
-			else if (src[i] >= '0' && src[i] <= '9') {
-				inNumber = true;
-				ret = addToNumber(ret, src[i]);
-			}
-		}
-		/*inside the number, check if the current char is still a digit*/
-		else if (src[i] >= '0' && src[i] <= '9'){
-			ret = addToNumber(ret, src[i]);
-		}
-		/*if the current char is not a digit, the number is over*/
-		else {
-			break;
-		}
-	}
-	if (isNegative) {
-		return ret*-1;
-	}
-	return ret;
-}
-				</code>
-			</pre>
-			<h4>Comments</h4>
 			<p>
-				I always use the "/**/" comment format, even for single-line comments. I believe this encourages me to put comments
-				on their own lines. In turn, I think this leads to more meaningful content as opposed to quick comments at the end
-				of a line. It should be noted that I'm a bit lazy and don't use the traditional leading asterisks like I should. This
-				is for consistency among the other languages that I write in that don't use that convention.
-			</p>
-			<h4>Indentation and bracket placement</h4>
-			<p>
-				I always use hard tabs when possible in any language. I know there exists a lot of controversey on this regard, and
-				I don't have a zealous opinion on this. On the other hand, hard tabs are easier to navigate when the text editor
-				you're using doesn't know how to detect soft tabs and skip them automatically. Also, I have yet to meet a language
-				that honestly refuses them, though I know M4 refuses to parse soft tabs.
-			</p>
-			<p>
-				I put my opening brackets on the same line as the expression they belong to. Some people like it the other way. That's
-				fine, but this way is easier for me to read. It allows me to look straight up from the respective closing bracket and
-				see the exact statement it belongs to rather than having to skip up an extra line.
-			</p>
-			<h4>Naming Stuff</h4>
-			<p>
-				As per C tradition, I name public-facing things underscore-deliminated style. Private things such as locals and helper
-				functions are camelCased. This isn't very C-like, but I like it. It makes it easier for me to tell when something is
-				intended to be global or not.
-			</p>
-			<h4>Functions and other syntax</h4>
-			<p>
-				I always omit the space between the function name and the argument list in any language that supports it. I have no
-				reasoning to back this up other than it saves my thumb a trip to the space bar. This is pretty much the only place I
-				omit whitespace. Argument lists either in declarations or calls are always space-separated. I think it looks a lot
-				cleaner.
-			</p>
-			<p>
-				Return is not a function. I don't treat as so (though I did when I first learned C++). sizeof is also not a function,
-				though I'm <a href="https://lkml.org/lkml/2012/7/11/103">with Linus on this one</a>. It makes more sense to treat it
-				as one.
-			</p>
+				Lately, I've been following the <a href="https://www.kernel.org/doc/Documentation/CodingStyle">Linux Kernel Coding Style</a>. This 
+				is a departure from how I used to write C, so my projects will be in limbo for a while.
 			<hr/>
 			<h3>C++</h3>
 			<p>
@@ -119,7 +43,7 @@ int atoi(const char* src) {
 			<hr/>
 			<h3>JavaScript</h3>
 			<h4>Example</h4>
-			<i>(From my fork of LinterGCC)</i>
+			<i>(From Linter-CNew)</i>
 			<pre>
 				<code>
 buildCommand: function(activeEditor, file) {
@@ -162,9 +86,6 @@ buildCommand: function(activeEditor, file) {
 		&lt;/li&gt;
 		&lt;li&gt;
 			&lt;a href="https://github.com/zjcers/"&gt;Github&lt;/a&gt;
-		&lt;/li&gt;
-		&lt;li&gt;
-			&lt;a href="/files/resume.pdf"&gt;Resume&lt;/a&gt;
 		&lt;/li&gt;
 	&lt;/ul&gt;
 &lt;/div&gt;

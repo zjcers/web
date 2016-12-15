@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 	<head>
-		<title>LibSimpleC</title>
+		<title>Project Paxico LibC</title>
 		<noscript>
 			<link rel="stylesheet" href="/css/main.css">
 		</noscript>
@@ -20,13 +20,10 @@
 				<li>
 					<a href="https://github.com/zjcers/">Github</a>
 				</li>
-				<li>
-					<a href="/files/resume.pdf">Resume</a>
-				</li>
 			</ul>
 		</div>
 		<div id="content">
-			<h1>LibSimpleC</h1>
+			<h1>Project Paxico LibC</h1>
 			<i style="text-align: center;">A simple C standard library that I'm writing to learn about C</i>
 			<h2>Origins</h2>
 			<p>
@@ -49,13 +46,12 @@
 				Presently, the structure is super simple. All of the public-facing (plus a few private) functions are in the header files you
 				would normally expect them in (e.g. write() is in stdio.h). These reside in an include directory while their respective source
 				files reside in the main directory. Currently, the only methods that are spun-out from the standard ones are the functions that
-				compose the memory management routines. These are in memory.(c|h), but I am considering moving and inlining them to reduce
-				namespace pollution if nothing else.
+				test the memory management routines. These are in memory.h and are prefixed to avoid conflict.
 			</p>
 			<h2>Dependencies<h2>
 				<h3>Build time</h3>
 					<ul>
-						<li>A C compiler that supports C99. Currently, I have only tested GCC</li>
+						<li>GCC. Currently, stdarg.h depends on this since it needs compiler help on AMD64</li>
 						<li>Make. Any old make will do.</li>
 						<li>GNU autoconf</li>
 						<li>GNU automake</li>
@@ -68,8 +64,8 @@
 					</ul>
 			<h2>Naming</h2>
 			<p>
-				I honestly didn't spend a lot of time on this. About 15 seconds or so, if I remember correctly. If someone has an issue with
-				my use of the name, get in touch with me (through GitHub) and I'll change it. For now, it's what I'll call this thing.
+				Project Paxico is named after the small town of Paxico, Kansas. I drive by it every once in a while on the Interstate and think it's a
+				cool name.
 			</p>
 		</div>
 		<div id="bar-right">
