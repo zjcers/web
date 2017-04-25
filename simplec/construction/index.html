@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<title>Constructing a stdlib</title>
+		<link rel="stylesheet" href="/css/main.css">
+		<script src="/js/main.js"></script>
+	</head>
+	<body>
+		<div id="bar-left">
+			<h1 id="name">
+				Zane J<br/>
+				Cersovsky
+			</h1>
+			<ul>
+				<li>
+					<a href="/">Main Page</a>
+				</li>
+				<li>
+					<a href="https://github.com/zjcers/">Github</a>
+				</li>
+			</ul>
+		</div>
+		<div id="content">
+			<h1>Constructing a stdlib in C</h1>
+			<h2>Who is this for?</h2>
+			<p>
+			Coming into this, you should know basic programming, but being a wizard 
+			of object-oriented design or dreaming in pure Haskell is of no need. 
+			This is C: "C doesn't do that". 
+			What you should you have is a [un]healthy desire to peer behind the 
+			curtain and see what the rest of your system (assuming you are running 
+			Linux or another Unix-like). 
+			</p>
+			<p>
+			On the other side, if you're already proficient in C and/or have a 
+			good grasp on the magic that goes on to make your programs work, 
+			this is not for you. Feel free to read on and find any mistakes I 
+			have made. Suggestions are definitely welcome (open an issue on my 
+			github "web" repo).
+			</p> 
+			<h2>Motivation</h2>
+			<p>
+			So why would you want to build such a thing? It's certainly not a 
+			practical endeavor. I'd never trust Project Paxico with anything 
+			important. The point is, as mentioned above, to learn.
+			</p>
+			<p>
+			And what can you learn from this? First off, if you're unfamiliar with 
+			C, this document has a crash course in the basics and little notes and 
+			gotchas sprinkled throughout. That was what I intended to learn when I 
+			started writing my stdlib. There's also a lot of "peering behind the 
+			curtain" to see how common mechanisms, such as memory allocation and 
+			program start up, work.
+			</p>
+			<p>
+			As a last note before this tutorial begins in earnest, this is not a 
+			great document from a theoretical perspective. C is not the end-all of 
+			languages, and a Unix-like stdlib is most definitely not the best 
+			solution out there. However, these are common things in practice and 
+			this document is meant to pragmatic, not perfect.
+			</p>
+			<h2>Steps</h2>
+			<ol>
+				<li>
+					<a href="crash_course.html">A introductory crash course in C</a>
+				</li>
+				<li>
+					<a href="stdlib_structure.html">Structure and concepts of the standard library</a>
+				</li>
+				<li>
+					<a href="build_environment.html">Setting up a build environment</a>
+				</li>
+				<li>
+					<a href="getting_started.html">Getting started with building</a>
+				</li>
+				<li>
+					<a href="stdlib/index.html">stdlib.h Overview</a>
+				</li>
+			</ol>
+		</div>
+	</body>
+</html>
